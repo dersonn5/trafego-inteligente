@@ -19,7 +19,6 @@ const navItems = [
             { href: '/', label: 'Dashboard', icon: LayoutDashboard },
             { href: '/campaigns', label: 'Campanhas', icon: Megaphone },
             { href: '/campaigns/create', label: 'Criar Campanha', icon: PlusCircle },
-            { href: '/campaigns/ai-creator', label: 'AI Creator', icon: Sparkles },
         ],
     },
     {

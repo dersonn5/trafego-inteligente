@@ -1,0 +1,43 @@
+﻿git : To https://github
+.com/dersonn5/antigravi
+ty.git
+No linha:1 caractere:1
++ git push -u origin 
+main > push_out.txt 
+2>&1
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (To https://gi   
+ th...antigravity.g    
+it:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+ ! [rejected]        
+main -> main (fetch 
+first)
+error: failed to push 
+some refs to 'https://g
+ithub.com/dersonn5/anti
+gravity.git'
+hint: Updates were 
+rejected because the 
+remote contains work 
+that you do not
+hint: have locally. 
+This is usually caused 
+by another repository 
+pushing to
+hint: the same ref. If 
+you want to integrate 
+the remote changes, use
+hint: 'git pull' 
+before pushing again.
+hint: See the 'Note 
+about fast-forwards' 
+in 'git push --help' 
+for details.
