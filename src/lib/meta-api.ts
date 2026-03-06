@@ -85,6 +85,45 @@ async function metaFetch<T>(
         fetchOptions.headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
     }
 
+    // Mock fallback when dummy data is used in Vercel to allow the UI to load
+    if (accessToken.includes('dummy')) {
+        console.log('Skipping real meta fetch due to dummy token:', endpoint);
+        // Returning minimal empty structure to prevent UI crashes
+        if (endpoint.includes('insights')) {
+            return {
+                data: [{
+                    spend: '145.50',
+                    impressions: '12500',
+                    reach: '9800',
+                    clicks: '350',
+                    cpc: '0.41',
+                    ctr: '2.8',
+                    date_start: new Date().toISOString(),
+                    date_stop: new Date().toISOString()
+                }]
+            } as any;
+        }
+
+        if (endpoint.includes('campaigns') && method === 'GET') {
+            return {
+                data: [{
+                    id: 'mock_camp_1',
+                    name: '(Mock) Campanha de Vendas - Checkout',
+                    status: 'ACTIVE',
+                    objective: 'OUTCOME_SALES',
+                    daily_budget: '5000',
+                    insights: {
+                        data: [{
+                            spend: '0', impressions: '0', reach: '0', clicks: '0', cpc: '0', ctr: '0'
+                        }]
+                    }
+                }]
+            } as any;
+        }
+
+        return { data: [] } as any;
+    }
+
     const response = await fetch(url.toString(), fetchOptions);
     const data = await response.json();
 
