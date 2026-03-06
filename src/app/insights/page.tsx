@@ -177,7 +177,7 @@ export default function InsightsPage() {
                                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
                                     <XAxis dataKey="date" stroke="#55556e" fontSize={11} tickLine={false} />
                                     <YAxis stroke="#55556e" fontSize={11} tickLine={false} axisLine={false} tickFormatter={(v) => `R$${v}`} />
-                                    <Tooltip contentStyle={customTooltipStyle} formatter={(value: number) => [`R$ ${value.toFixed(2)}`, 'Gasto']} />
+                                    <Tooltip contentStyle={customTooltipStyle} formatter={(value: any) => [`R$ ${Number(value).toFixed(2)}`, 'Gasto'] as any} />
                                     <Area type="monotone" dataKey="spend" stroke="#f59e0b" fill="url(#gradSpend)" strokeWidth={2} />
                                 </AreaChart>
                             </ResponsiveContainer>
@@ -196,7 +196,7 @@ export default function InsightsPage() {
                                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
                                     <XAxis dataKey="date" stroke="#55556e" fontSize={11} tickLine={false} />
                                     <YAxis stroke="#55556e" fontSize={11} tickLine={false} axisLine={false} />
-                                    <Tooltip contentStyle={customTooltipStyle} formatter={(value: number) => [formatNumber(value), 'Cliques']} />
+                                    <Tooltip contentStyle={customTooltipStyle} formatter={(value: any) => [formatNumber(Number(value)), 'Cliques'] as any} />
                                     <Bar dataKey="clicks" fill="#0ea5e9" radius={[4, 4, 0, 0]} />
                                 </BarChart>
                             </ResponsiveContainer>
@@ -221,7 +221,7 @@ export default function InsightsPage() {
                                     <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
                                     <XAxis dataKey="date" stroke="#55556e" fontSize={11} tickLine={false} />
                                     <YAxis stroke="#55556e" fontSize={11} tickLine={false} axisLine={false} tickFormatter={(v) => `${v}%`} />
-                                    <Tooltip contentStyle={customTooltipStyle} formatter={(value: number) => [`${value.toFixed(2)}%`, 'CTR']} />
+                                    <Tooltip contentStyle={customTooltipStyle} formatter={(value: any) => [`${Number(value).toFixed(2)}%`, 'CTR'] as any} />
                                     <Area type="monotone" dataKey="ctr" stroke="#22c55e" fill="url(#gradCtr)" strokeWidth={2} />
                                 </AreaChart>
                             </ResponsiveContainer>
